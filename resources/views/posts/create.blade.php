@@ -6,32 +6,36 @@
 
     <x-page-header title="Yangi post yaratish"/>
 
-    <div class="container py-5">
-        <div class="row align-items-center py-4">
+    <div class="container ">
+        <div class="w-50 py-4">
             <div class="contact-form">
                 <div id="success"></div>
-                <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                    <div class="form-row">
-                        <div class="col-sm-6 control-group">
-                            <input type="text" class="form-control p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="col-sm-6 control-group">
-                            <input type="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
+                <form  action="{{route('posts.store')}}" method="POST">
+                    @csrf
                     <div class="control-group">
-                        <input type="text" class="form-control p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                        <input type="text" class="form-control p-4" name="title" placeholder="Sarlavhasi..." required="required" />
                         <p class="help-block text-danger"></p>
                     </div>
+
+{{--                    <div class="control-group">--}}
+{{--                        <input type="file" class="form-control p-4" name="photo" placeholder="Rasmi..."  title="rasmi" required="required" />--}}
+{{--                        <p class="help-block text-danger"></p>--}}
+{{--                    </div>--}}
+
                     <div class="control-group">
-                        <textarea class="form-control p-4" rows="6" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                        <textarea class="form-control p-4" rows="2" name="short_content" placeholder="Qisqa mazmuni..." required="required"></textarea>
                         <p class="help-block text-danger"></p>
                     </div>
+
+                    <div class="control-group">
+                        <textarea class="form-control p-4" rows="6" name="conten" placeholder="Matni..." required="required"></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+
                     <div>
-                        <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton">Send Message</button>
+                        <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton"> Yaratish </button>
                     </div>
+
                 </form>
             </div>
         </div>
