@@ -28,15 +28,16 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-//        dd($request->all());
+        $request->validate([
+            'title' => 'required',
+            'short_content' => 'required',
+            'content' => 'required',
+        ]);
+
+
         $post = Post::create([
             'title' => $request->title,
             'short_content' => $request->short_content,
