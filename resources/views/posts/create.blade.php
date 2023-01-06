@@ -10,10 +10,21 @@
         <div class="w-50 py-4">
             <div class="contact-form">
                 <div id="success"></div>
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form  action="{{route('posts.store')}}" method="POST">
                     @csrf
                     <div class="control-group">
-                        <input type="text" class="form-control p-4" name="title" placeholder="Sarlavhasi..." required="required" />
+                        <input type="text" class="form-control p-4" name="title" placeholder="Sarlavhasi..."  />
                         <p class="help-block text-danger"></p>
                     </div>
 
@@ -23,12 +34,12 @@
 {{--                    </div>--}}
 
                     <div class="control-group">
-                        <textarea class="form-control p-4" rows="2" name="short_content" placeholder="Qisqa mazmuni..." required="required"></textarea>
+                        <textarea class="form-control p-4" rows="2" name="short_content" placeholder="Qisqa mazmuni..." ></textarea>
                         <p class="help-block text-danger"></p>
                     </div>
 
                     <div class="control-group">
-                        <textarea class="form-control p-4" rows="6" name="conten" placeholder="Matni..." required="required"></textarea>
+                        <textarea class="form-control p-4" rows="6" name="conten" placeholder="Matni..." ></textarea>
                         <p class="help-block text-danger"></p>
                     </div>
 
