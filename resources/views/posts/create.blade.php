@@ -11,21 +11,24 @@
             <div class="contact-form">
                 <div id="success"></div>
 
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+{{--                validate errors--}}
+{{--                @if ($errors->any())--}}
+{{--                    <div class="alert alert-danger">--}}
+{{--                        <ul>--}}
+{{--                            @foreach ($errors->all() as $error)--}}
+{{--                                <li>{{ $error }}</li>--}}
+{{--                            @endforeach--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                @endif--}}
 
                 <form  action="{{route('posts.store')}}" method="POST">
                     @csrf
-                    <div class="control-group">
-                        <input type="text" class="form-control p-4" name="title" placeholder="Sarlavhasi..."  />
-                        <p class="help-block text-danger"></p>
+                    <div class="control-group mb-4">
+                        <input type="text" class="form-control p-4" name="title" placeholder="Sarlavhasi..."  value="{{old('title')}}"/>
+                        @error('title')
+                        <p class="help-block text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
 
 {{--                    <div class="control-group">--}}
@@ -33,14 +36,18 @@
 {{--                        <p class="help-block text-danger"></p>--}}
 {{--                    </div>--}}
 
-                    <div class="control-group">
-                        <textarea class="form-control p-4" rows="2" name="short_content" placeholder="Qisqa mazmuni..." ></textarea>
-                        <p class="help-block text-danger"></p>
+                    <div class="control-group mb-4">
+                        <textarea class="form-control p-4" rows="2" name="short_content" placeholder="Qisqa mazmuni..."  >{{old('short_content')}}</textarea>
+                        @error('short_content')
+                        <p class="help-block text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
 
-                    <div class="control-group">
-                        <textarea class="form-control p-4" rows="6" name="conten" placeholder="Matni..." ></textarea>
-                        <p class="help-block text-danger"></p>
+                    <div class="control-group mb-4">
+                        <textarea class="form-control p-4" rows="6" name="conten" placeholder="Matni..." >{{old('conten')}}</textarea>
+                        @error('conten')
+                        <p class="help-block text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div>
