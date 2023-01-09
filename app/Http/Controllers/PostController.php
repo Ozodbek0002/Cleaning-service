@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePostRequest;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -15,11 +16,7 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('posts.create');
@@ -45,12 +42,7 @@ class PostController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Post $post)
     {
         return view('posts.show', [
@@ -60,35 +52,37 @@ class PostController extends Controller
     }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('posts.edit', [
+            'post' => $post
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(Request $request, Post $post)
     {
-        //
+        if ($request->hasFile('photo')) {
+
+            if (isset($post->photo)){
+                Storage::delete($post->photo);
+            }
+            $name = $request->file('photo')->getClientOriginalName();
+            $path = $request->file('photo')->storeAs('post-photos', $name);
+        }
+
+
+        $post->update([
+            'title' => $request->title,
+            'short_content' => $request->short_content,
+            'content' => $request->conten,
+            'photo' => $path ?? $post->photo,
+        ]);
+
+        return redirect()->route('posts.show',['post'=>$post->id]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //
