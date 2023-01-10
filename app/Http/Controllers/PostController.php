@@ -88,6 +88,7 @@ class PostController extends Controller
         if (isset($post->photo)){
             Storage::delete($post->photo);
         }
+
         $post->delete();
         return redirect()->route('posts.index');
     }
