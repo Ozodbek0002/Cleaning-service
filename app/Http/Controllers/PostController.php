@@ -83,8 +83,13 @@ class PostController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        if (isset($post->photo)){
+            Storage::delete($post->photo);
+        }
+        $post->delete();
+        return redirect()->route('posts.index');
     }
+
 }
