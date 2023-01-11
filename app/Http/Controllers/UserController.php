@@ -9,4 +9,5 @@ class UserController extends Controller
     public function index(){
         return 'Bu Userlarni royhati';
     }
+
 }

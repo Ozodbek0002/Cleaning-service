@@ -95,8 +95,9 @@
                         </div>
                     </div>
 
+{{--                    commetns--}}
                     <div class="bg-light rounded p-5">
-                        <h3 class="mb-4 section-title">Leave a comment</h3>
+                        <h3 class="mb-4 section-title">Izoh qoldiring...</h3>
                         <form>
                             <div class="form-row">
                                 <div class="form-group col-sm-6">
@@ -125,6 +126,8 @@
                 </div>
 
                 <div class="col-lg-4 mt-5 mt-lg-0">
+
+{{--                    user--}}
                     <div class="d-flex flex-column text-center bg-secondary rounded mb-5 py-5 px-4">
                         <img src="/img/user.jpg" class="/img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
                         <h3 class="text-white mb-3">John Doe</h3>
@@ -132,6 +135,8 @@
                             ipsum
                             ipsum sit no ut est. Guber ea ipsum erat kasd amet est elitr ea sit.</p>
                     </div>
+
+{{--                    search--}}
                     <div class="mb-5">
                         <div class="w-100">
                             <div class="input-group">
@@ -142,6 +147,8 @@
                             </div>
                         </div>
                     </div>
+
+{{--                    Categories--}}
                     <div class="mb-5">
                         <h3 class="mb-4 section-title">Categories</h3>
                         <ul class="list-inline m-0">
@@ -172,14 +179,17 @@
                             </li>
                         </ul>
                     </div>
+
                     <div class="mb-5">
-                        <img src="/img/blog-1.jpg" alt="" class="/img-fluid rounded">
+                        <img src="/img/blog-2.jpg" alt="" class="/img-fluid rounded">
                     </div>
+
+{{--                    latest posts--}}
                     <div class="mb-5">
                         <h3 class="mb-4 section-title">Oxirgi Postlar</h3>
                         @foreach($recent_posts as $recent)
                             <div class="d-flex align-items-center border-bottom mb-3 pb-3">
-                                <img class="/img-fluid rounded" src="/img/blog-1.jpg"
+                                <img class="/img-fluid rounded" src="/img/blog-2.jpg"
                                      style="width: 80px; height: 80px; object-fit: cover;" alt="">
                                 <div class="d-flex flex-column pl-3">
                                     <a class="text-dark mb-2" href="">{{$recent->title}}</a>
@@ -195,9 +205,12 @@
 
 
                     </div>
+
                     <div class="mb-5">
                         <img src="/img/blog-2.jpg" alt="" class="/img-fluid rounded">
                     </div>
+
+{{--                    Tags--}}
                     <div class="mb-5">
                         <h3 class="mb-4 section-title">Tag Cloud</h3>
                         <div class="d-flex flex-wrap m-n1">
@@ -209,9 +222,11 @@
                             <a href="" class="btn btn-outline-secondary m-1">Consulting</a>
                         </div>
                     </div>
+
                     <div class="mb-5">
                         <img src="/img/blog-3.jpg" alt="" class="/img-fluid rounded">
                     </div>
+
                     <div>
                         <h3 class="mb-4 section-title">Plain Text</h3>
                         Aliquyam sed lorem stet diam dolor sed ut sit. Ut sanctus erat ea est aliquyam dolor et. Et no
@@ -219,6 +234,8 @@
                         tempor
                         rebum dolor, tempor takimata clita sit et elitr ut eirmod.
                     </div>
+
+
                 </div>
             </div>
         </div>
