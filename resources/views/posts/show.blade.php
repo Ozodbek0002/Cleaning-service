@@ -1,7 +1,7 @@
 <x-layouts.main xmlns:x-slot="http://www.w3.org/1999/xlink">
 
     <x-slot:title>
-        {{$post->id}}
+        {{$post->id}}-{{$post->title}}
     </x-slot:title>
 
     <x-page-header title="Post-{{$post->id}}"/>
@@ -12,18 +12,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-            <div class="row mb-4">
-                <a class="btn btn-sm btn-outline-dark mr-2" href="{{route('posts.edit',$post->id)}} ">O`zgartrish </a>
+                    <div class="row mb-4">
+                        <a class="btn btn-sm btn-outline-dark mr-2" href="{{route('posts.edit',$post->id)}} ">O`zgartrish </a>
 
-                <form action="{{route( 'posts.destroy',['post'=>$post->id] )}}"
-                      method="POST"
-                      onSubmit="return confirm('Rostan ham o`chirilishini hohlaysizmi?');"
-                    >
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-sm btn-outline-danger" type="submit">O`chirish</button>
-                </form>
-            </div>
+                        <form action="{{route( 'posts.destroy',['post'=>$post->id] )}}"
+                              method="POST"
+                              onSubmit="return confirm('Rostan ham o`chirilishini hohlaysizmi?');"
+                        >
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-sm btn-outline-danger" type="submit">O`chirish</button>
+                        </form>
+                    </div>
                     <div class="mb-5">
                         <div class="d-flex mb-2">
                             <a class="text-secondary text-uppercase font-weight-medium" href="">Admin</a>
@@ -67,67 +67,62 @@
                     </div>
 
                     <div class="mb-5">
-                        <h3 class="mb-4 section-title">3 Comments</h3>
+                        <h3 class="mb-4 section-title">{{$post->comments()->count()}} Izohlar </h3>
 
-                        <div class="media mb-4">
-                            <img src="/img/user.jpg" alt="Image" class="/img-fluid rounded-circle mr-3 mt-1"
-                                 style="width: 45px;">
-                            <div class="media-body">
-                                <h6>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
-                                <p>Diam amet duo labore stet elitr ea clita ipsum, tempor labore accusam ipsum et no at.
-                                    Kasd diam tempor rebum magna dolores sed sed eirmod ipsum clita, at tempor amet
-                                    ipsum diam tempor sit.</p>
-                                <button class="btn btn-sm btn-light">Reply</button>
+                        @foreach($post->comments as $comment)
+                            <div class="media mb-4">
+                                <img src="/img/user.jpg" alt="Image" class="/img-fluid rounded-circle mr-3 mt-1"
+                                     style="width: 45px;">
+                                <div class="media-body">
+                                    <h6> {{$comment->user->name}} <small><i> {{ $comment->created_at }} </i></small></h6>
+                                    <p>{{$comment->body}}</p>
+{{--                                    <button class="btn btn-sm btn-light"> Reply</button>--}}
 
-                                <div class="media mt-4">
-                                    <img src="/img/user.jpg" alt="Image" class="/img-fluid rounded-circle mr-3 mt-1"
-                                         style="width: 45px;">
-                                    <div class="media-body">
-                                        <h6>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h6>
-                                        <p>Diam amet duo labore stet elitr ea clita ipsum, tempor labore accusam ipsum
-                                            et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum clita,
-                                            at tempor amet ipsum diam tempor sit.</p>
-                                        <button class="btn btn-sm btn-light">Reply</button>
-                                    </div>
                                 </div>
-
                             </div>
-                        </div>
+                        @endforeach
                     </div>
 
-{{--                    commetns--}}
+                    {{--                    commetns--}}
                     <div class="bg-light rounded p-5">
-                        <h3 class="mb-4 section-title">Izoh qoldiring...</h3>
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-sm-6">
-                                    <label for="name">Name *</label>
-                                    <input type="text" class="form-control" id="name">
-                                </div>
-                                <div class="form-group col-sm-6">
-                                    <label for="email">Email *</label>
-                                    <input type="email" class="form-control" id="email">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="website">Website</label>
-                                <input type="url" class="form-control" id="website">
-                            </div>
+
+                        <h3 class="mb-4 section-title">Izoh qoldirish</h3>
+                        <form action="{{route('comments.store')}}" method="POST">
+                            @csrf
+                            {{--                            <div class="form-row">--}}
+                            {{--                                <div class="form-group col-sm-6">--}}
+                            {{--                                    <label for="name">Name *</label>--}}
+                            {{--                                    <input type="text" class="form-control" id="name">--}}
+                            {{--                                </div>--}}
+                            {{--                                <div class="form-group col-sm-6">--}}
+                            {{--                                    <label for="email">Email *</label>--}}
+                            {{--                                    <input type="email" class="form-control" id="email">--}}
+                            {{--                                </div>--}}
+                            {{--                            </div>--}}
+
+                            {{--                            <div class="form-group">--}}
+                            {{--                                <label for="website">Website</label>--}}
+                            {{--                                <input type="url" class="form-control" id="website">--}}
+                            {{--                            </div>--}}
 
                             <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                                <label for="message">Habar</label>
+                                <textarea name="body" cols="30" rows="5" class="form-control"></textarea>
                             </div>
+
+                            <input type="hidden" value="{{$post->id}}" name="post_id">
+
                             <div class="form-group mb-0">
-                                <input type="submit" value="Leave Comment" class="btn btn-primary">
+                                <input type="submit" value="yuborish" class="btn btn-primary">
                             </div>
+
                         </form>
                     </div>
                 </div>
 
                 <div class="col-lg-4 mt-5 mt-lg-0">
 
-{{--                    user--}}
+                    {{--                    user--}}
                     <div class="d-flex flex-column text-center bg-secondary rounded mb-5 py-5 px-4">
                         <img src="/img/user.jpg" class="/img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
                         <h3 class="text-white mb-3">John Doe</h3>
@@ -136,7 +131,7 @@
                             ipsum sit no ut est. Guber ea ipsum erat kasd amet est elitr ea sit.</p>
                     </div>
 
-{{--                    search--}}
+                    {{--                    search--}}
                     <div class="mb-5">
                         <div class="w-100">
                             <div class="input-group">
@@ -148,7 +143,7 @@
                         </div>
                     </div>
 
-{{--                    Categories--}}
+                    {{--                    Categories--}}
                     <div class="mb-5">
                         <h3 class="mb-4 section-title">Categories</h3>
                         <ul class="list-inline m-0">
@@ -184,7 +179,7 @@
                         <img src="/img/blog-2.jpg" alt="" class="/img-fluid rounded">
                     </div>
 
-{{--                    latest posts--}}
+                    {{--                    latest posts--}}
                     <div class="mb-5">
                         <h3 class="mb-4 section-title">Oxirgi Postlar</h3>
                         @foreach($recent_posts as $recent)
@@ -210,7 +205,7 @@
                         <img src="/img/blog-2.jpg" alt="" class="/img-fluid rounded">
                     </div>
 
-{{--                    Tags--}}
+                    {{--                    Tags--}}
                     <div class="mb-5">
                         <h3 class="mb-4 section-title">Tag Cloud</h3>
                         <div class="d-flex flex-wrap m-n1">

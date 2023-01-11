@@ -10,7 +10,7 @@ use App\Models\User;
 class Comment extends Model
 {
     use HasFactory;
-    protected $fillable = ['body'];
+    protected $fillable = ['body','post_id','user_id'];
 
     public function post()
     {
