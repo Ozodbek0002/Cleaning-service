@@ -32,17 +32,26 @@
                         @enderror
                     </div>
                     <div class="control-group mb-4">
+                        <label class="form-label select-label">Kategoriya</label>
                         <select name="category_id"  class="form-control" >
                             @foreach($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                         </select>
                     </div>
+                    <div class="control-group mb-4">
+                        <label class="form-label select-label">Tag</label>
+                        <select name="tags[]"  class=" select form-control" multiple>
+                            @foreach($tags as $tag)
+                                <option value="{{$tag->id}}">{{$tag->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
 
 
                     <div class="control-group">
-                        <input type="file" class="form-control p-4" name="photo" placeholder="Rasmi..." title="rasmi"
-                               required="required"/>
+                        <input type="file" class="form-control p-4" name="photo" placeholder="Rasmi..." title="rasmi">
                         @error('photo')
                         <p class="help-block text-danger">{{ $message }}</p>
                         @enderror

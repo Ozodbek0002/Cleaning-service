@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
@@ -15,15 +16,16 @@ class PostController extends Controller
     {
         $posts = Post::latest()->paginate(12);
         return view('posts.index', [
-            'posts'=>$posts,
+            'posts' => $posts,
         ]);
     }
 
 
     public function create()
     {
-        return view('posts.create',[
-            'categories'=>Category::all(),
+        return view('posts.create', [
+            'categories' => Category::all(),
+            'tags' => Tag::all(),
         ]);
     }
 
@@ -37,13 +39,19 @@ class PostController extends Controller
 
 
         $post = Post::create([
-            'user_id'=>1,
-            'category_id'=>$request->category_id,
+            'user_id' => 1,
+            'category_id' => $request->category_id,
             'title' => $request->title,
             'short_content' => $request->short_content,
             'content' => $request->conten,
             'photo' => $path ?? null,
         ]);
+
+        if (isset($request->tags)) {
+            foreach ($request->tags as $tag) {
+                $post->tags()->attach($tag);
+            }
+        }
 
         return redirect()->route('posts.index');
 
@@ -54,6 +62,8 @@ class PostController extends Controller
     {
         return view('posts.show', [
             'post' => $post,
+            'tags'=>Tag::all(),
+            'categories'=>Category::all(),
             'recent_posts' => Post::latest()->get()->except($post->id)->take(5),
         ]);
     }
@@ -71,7 +81,7 @@ class PostController extends Controller
     {
         if ($request->hasFile('photo')) {
 
-            if (isset($post->photo)){
+            if (isset($post->photo)) {
                 Storage::delete($post->photo);
             }
             $name = $request->file('photo')->getClientOriginalName();
@@ -86,13 +96,13 @@ class PostController extends Controller
             'photo' => $path ?? $post->photo,
         ]);
 
-        return redirect()->route('posts.show',['post'=>$post->id]);
+        return redirect()->route('posts.show', ['post' => $post->id]);
     }
 
 
     public function destroy(Post $post)
     {
-        if (isset($post->photo)){
+        if (isset($post->photo)) {
             Storage::delete($post->photo);
         }
 
