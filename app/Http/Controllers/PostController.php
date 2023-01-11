@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
@@ -21,7 +22,9 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        return view('posts.create',[
+            'categories'=>Category::all(),
+        ]);
     }
 
 
@@ -34,6 +37,8 @@ class PostController extends Controller
 
 
         $post = Post::create([
+            'user_id'=>1,
+            'category_id'=>$request->category_id,
             'title' => $request->title,
             'short_content' => $request->short_content,
             'content' => $request->conten,

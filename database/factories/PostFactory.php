@@ -19,6 +19,7 @@ class PostFactory extends Factory
         return [
             'user_id' => 1,
             'title' => fake()->sentence,
+            'category_id' => rand(1, 5),
             'short_content' => fake()->sentence(15),
             'content' => fake()->paragraph(15,true ),
 //            'photo' => $this->faker->imageUrl(640, 480, 'cats', true),

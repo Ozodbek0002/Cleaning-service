@@ -11,49 +11,64 @@
             <div class="contact-form">
                 <div id="success"></div>
 
-{{--                validate errors--}}
-{{--                @if ($errors->any())--}}
-{{--                    <div class="alert alert-danger">--}}
-{{--                        <ul>--}}
-{{--                            @foreach ($errors->all() as $error)--}}
-{{--                                <li>{{ $error }}</li>--}}
-{{--                            @endforeach--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                @endif--}}
+                {{--                validate errors--}}
+                {{--                @if ($errors->any())--}}
+                {{--                    <div class="alert alert-danger">--}}
+                {{--                        <ul>--}}
+                {{--                            @foreach ($errors->all() as $error)--}}
+                {{--                                <li>{{ $error }}</li>--}}
+                {{--                            @endforeach--}}
+                {{--                        </ul>--}}
+                {{--                    </div>--}}
+                {{--                @endif--}}
 
-                <form  action="{{route('posts.store')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('posts.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="control-group mb-4">
-                        <input type="text" class="form-control p-4" name="title" placeholder="Sarlavhasi..."  value="{{old('title')}}"/>
+                        <input type="text" class="form-control p-4" name="title" placeholder="Sarlavhasi..."
+                               value="{{old('title')}}"/>
                         @error('title')
                         <p class="help-block text-danger">{{ $message }}</p>
                         @enderror
                     </div>
+                    <div class="control-group mb-4">
+                        <select name="category_id"  class="form-control" >
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
 
                     <div class="control-group">
-                        <input type="file" class="form-control p-4" name="photo" placeholder="Rasmi..."  title="rasmi" required="required" />
+                        <input type="file" class="form-control p-4" name="photo" placeholder="Rasmi..." title="rasmi"
+                               required="required"/>
                         @error('photo')
                         <p class="help-block text-danger">{{ $message }}</p>
                         @enderror
                     </div>
+                    <br>
 
                     <div class="control-group mb-4">
-                        <textarea class="form-control p-4" rows="2" name="short_content" placeholder="Qisqa mazmuni..."  >{{old('short_content')}}</textarea>
+                        <textarea class="form-control p-4" rows="2" name="short_content"
+                                  placeholder="Qisqa mazmuni...">{{old('short_content')}}</textarea>
                         @error('short_content')
                         <p class="help-block text-danger">{{ $message }}</p>
                         @enderror
                     </div>
 
                     <div class="control-group mb-4">
-                        <textarea class="form-control p-4" rows="6" name="conten" placeholder="Matni..." >{{old('conten')}}</textarea>
+                        <textarea class="form-control p-4" rows="6" name="conten"
+                                  placeholder="Matni...">{{old('conten')}}</textarea>
                         @error('conten')
                         <p class="help-block text-danger">{{ $message }}</p>
                         @enderror
                     </div>
 
                     <div>
-                        <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton"> Yaratish </button>
+                        <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton">
+                            Yaratish
+                        </button>
                     </div>
 
                 </form>

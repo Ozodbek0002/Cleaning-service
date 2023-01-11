@@ -33,6 +33,8 @@
                             <span class="text-primary px-2">|</span>
                             <a class="text-secondary text-uppercase font-weight-medium" href="">Cleaning</a>
                         </div>
+                            <a class="text-danger text-uppercase font-weight-medium" >{{ $post->category->name }}</a>
+
                         <h5 class="font-weight-medium mb-2">{{$post->title}}</h5>
                         <p class="mb-4">{{$post->short_content}}</p>
                         <a class="btn btn-sm btn-primary py-2" href="{{route('posts.show',['post'=>$post->id])}}">Ko'rish</a>
