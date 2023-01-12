@@ -9,7 +9,7 @@ use App\Http\Controllers\AuthController;
 
 
 
-Route::get('/', [PageController::class,'main']);
+Route::get('/', [PageController::class,'main'])->name('main');
 
 Route::get('login',[AuthController::class,'login'])->name('login');
 Route::post('authenticate',[AuthController::class, 'authenticate'])->name('authenticate');

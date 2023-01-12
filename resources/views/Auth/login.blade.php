@@ -18,11 +18,13 @@
                     <form action="{{route('authenticate')}}" method="POST" >
 
                         <div class="form-group py-2">
-                            <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text" placeholder="Email" required> </div>
+                            <div class="input-field"> <span class="far fa-user p-2"></span> <input  name="email"  type="text" placeholder="Email" required >
+                            </div>
                         </div>
 
                         <div class="form-group py-1 pb-2">
-                            <div class="input-field"> <span class="fas fa-lock px-2"></span> <input type="password" placeholder="Parol" required> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
+                            <div class="input-field"> <span class="fas fa-lock px-2"></span> <input name="password" type="password" placeholder="Parol" required> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button>
+                            </div>
                         </div>
 
                         <div class="form-inline"> <input type="checkbox" name="remember" id="remember"> <label for="remember" class="text-muted">Eslab qolish</label> <a href="#" id="forgot" class="font-weight-bold">parolni unitdingizmi?</a> </div>

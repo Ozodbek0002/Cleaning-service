@@ -22,11 +22,12 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+
+            return redirect()->intended('main');
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'Bu email ro`yhatdan o`tmagan.',
         ])->onlyInput('email');
 
     }
