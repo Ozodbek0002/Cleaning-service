@@ -30,6 +30,8 @@
                         <p class="help-block text-danger">{{ $message }}</p>
                         @enderror
                     </div>
+                    <br>
+
 
                     <div class="control-group mb-4">
                         <textarea class="form-control p-4" rows="2" name="short_content"
