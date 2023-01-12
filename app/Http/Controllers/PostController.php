@@ -12,11 +12,20 @@ use Illuminate\Support\Facades\Storage;
 class PostController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::latest()->paginate(12);
+        if (isset($request->tag_id)) {
+            $posts = Post::latest()->paginate(12);
+        } elseif (isset($request->category_id)) {
+            $posts = Post::where('category_id',$request->category_id)->paginate(12);
+            $title = $posts[0]->category->name;
+        } else {
+            $posts = Post::latest()->paginate(12);
+            $title = 'Oxirgi postlar';
+        }
         return view('posts.index', [
             'posts' => $posts,
+            'title'=>$title,
         ]);
     }
 
@@ -62,8 +71,8 @@ class PostController extends Controller
     {
         return view('posts.show', [
             'post' => $post,
-            'tags'=>Tag::all(),
-            'categories'=>Category::all(),
+            'tags' => Tag::all(),
+            'categories' => Category::all(),
             'recent_posts' => Post::latest()->get()->except($post->id)->take(5),
         ]);
     }

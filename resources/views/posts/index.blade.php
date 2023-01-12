@@ -12,8 +12,8 @@
         <div class="container">
             <div class="row align-items-end mb-4">
                 <div class="col-lg-6">
-                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">Latest Blog</h6>
-                    <h1 class="section-title mb-3">Oxirgi postlar</h1>
+{{--                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">Latest Blog</h6>--}}
+                    <h1 class="section-title mb-3"> {{$title}} </h1>
                 </div>
 
             </div>
@@ -34,11 +34,12 @@
                                 <span class="text-primary px-2">|</span>
                             @endforeach
                         </div>
-                        <a class="text-danger text-uppercase font-weight-medium">{{ $post->category->name }}</a>
+                        <a href="{{route('posts.index',['category_id'=>$post->category->id])}}" class="text-danger text-uppercase font-weight-medium">{{ $post->category->name }}</a>
 
                         <h5 class="font-weight-medium mb-2">{{$post->title}}</h5>
                         <p class="mb-4">{{$post->short_content}}</p>
                         <a class="btn btn-sm btn-primary py-2" href="{{route('posts.show',['post'=>$post->id])}}">Ko'rish</a>
+
                     </div>
                 @endforeach
 

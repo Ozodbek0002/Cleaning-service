@@ -15,6 +15,10 @@
             <a href="{{route('contact')}}" class="nav-item nav-link">Aloqa</a>
 
         </div>
-        <a href="{{route('posts.create')}}" class="btn btn-primary mr-3 d-none d-lg-block">Po`st yaratish</a>
+        @auth()
+            <a href="{{route('posts.create')}}" class="btn btn-primary mr-3 d-none d-lg-block">Po`st yaratish</a>
+        @else
+            <a href="{{route('posts.create')}}" class="btn btn-primary mr-3 d-none d-lg-block"> Kirish </a>
+        @endauth
     </div>
 </nav>
