@@ -12,6 +12,7 @@ use App\Http\Controllers\AuthController;
 Route::get('/', [PageController::class,'main']);
 
 Route::get('login',[AuthController::class,'login'])->name('login');
+Route::post('authenticate',[AuthController::class, 'authenticate'])->name('authenticate');
 
 Route::get('/users',[UserController::class,'index']);
 

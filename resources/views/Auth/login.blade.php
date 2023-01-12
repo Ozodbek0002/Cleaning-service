@@ -15,8 +15,7 @@
                     <h3 class="pt-3 font-weight-bold">Kirish</h3>
                 </div>
                 <div class="panel-body p-3">
-                    <form action="" method="POST" >
-                        @csrf
+                    <form action="{{route('authenticate')}}" method="POST" >
 
                         <div class="form-group py-2">
                             <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text" placeholder="Email" required> </div>
@@ -27,7 +26,7 @@
                         </div>
 
                         <div class="form-inline"> <input type="checkbox" name="remember" id="remember"> <label for="remember" class="text-muted">Eslab qolish</label> <a href="#" id="forgot" class="font-weight-bold">parolni unitdingizmi?</a> </div>
-                        <div class="btn btn-primary btn-block mt-3">Kirish</div>
+                        <button type="submit" class="btn btn-primary btn-block mt-3">Kirish</button>
                         <div class="text-center pt-4 text-muted">Ro`yhatdan o`tmaganmisiz? <a href="/resources/views/Auth/register.blade.php">Ro`yhatdan o`tish</a> </div>
                     </form>
                 </div>
