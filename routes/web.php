@@ -5,10 +5,13 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\AuthController;
 
 
 
 Route::get('/', [PageController::class,'main']);
+
+Route::get('login',[AuthController::class,'login'])->name('login');
 
 Route::get('/users',[UserController::class,'index']);
 

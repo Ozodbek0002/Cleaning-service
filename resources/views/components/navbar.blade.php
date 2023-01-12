@@ -18,7 +18,7 @@
         @auth()
             <a href="{{route('posts.create')}}" class="btn btn-primary mr-3 d-none d-lg-block">Po`st yaratish</a>
         @else
-            <a href="{{route('posts.create')}}" class="btn btn-primary mr-3 d-none d-lg-block"> Kirish </a>
+            <a href="{{route('login')}}" class="btn btn-primary mr-3 d-none d-lg-block"> Kirish </a>
         @endauth
     </div>
 </nav>
