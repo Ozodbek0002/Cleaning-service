@@ -13,15 +13,17 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row mb-4">
-                        <a class="btn btn-sm btn-outline-dark mr-2" href="{{route('posts.edit',$post->id)}} ">O`zgartrish </a>
+                        @auth()
+                            <a class="btn btn-sm btn-outline-dark mr-2" href="{{route('posts.edit',$post->id)}} ">O`zgartrish </a>
 
-                        <form action="{{route( 'posts.destroy',['post'=>$post->id] )}}"
-                              method="POST"
-                              onSubmit="return confirm('Rostan ham o`chirilishini hohlaysizmi?');">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-sm btn-outline-danger" type="submit">O`chirish</button>
-                        </form>
+                            <form action="{{route( 'posts.destroy',['post'=>$post->id] )}}"
+                                  method="POST"
+                                  onSubmit="return confirm('Rostan ham o`chirilishini hohlaysizmi?');">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-sm btn-outline-danger" type="submit">O`chirish</button>
+                            </form>
+                        @endauth
                     </div>
                     <div class="mb-5">
                         <div class="d-flex mb-2">
@@ -85,42 +87,34 @@
                                 </div>
                             </div>
                         @endforeach
+
                     </div>
 
                     {{--                    commetns--}}
                     <div class="bg-light rounded p-5">
 
                         <h3 class="mb-4 section-title">Izoh qoldirish</h3>
-                        <form action="{{route('comments.store')}}" method="POST">
-                            @csrf
-                            {{--                            <div class="form-row">--}}
-                            {{--                                <div class="form-group col-sm-6">--}}
-                            {{--                                    <label for="name">Name *</label>--}}
-                            {{--                                    <input type="text" class="form-control" id="name">--}}
-                            {{--                                </div>--}}
-                            {{--                                <div class="form-group col-sm-6">--}}
-                            {{--                                    <label for="email">Email *</label>--}}
-                            {{--                                    <input type="email" class="form-control" id="email">--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
+                        @auth()
+                            <form action="{{route('comments.store')}}" method="POST">
+                                @csrf
 
-                            {{--                            <div class="form-group">--}}
-                            {{--                                <label for="website">Website</label>--}}
-                            {{--                                <input type="url" class="form-control" id="website">--}}
-                            {{--                            </div>--}}
+                                <div class="form-group">
+                                    <label for="message">Habar</label>
+                                    <textarea name="body" cols="30" rows="5" class="form-control"></textarea>
+                                </div>
 
-                            <div class="form-group">
-                                <label for="message">Habar</label>
-                                <textarea name="body" cols="30" rows="5" class="form-control"></textarea>
+                                <input type="hidden" value="{{$post->id}}" name="post_id">
+
+                                <div class="form-group mb-0">
+                                    <input type="submit" value="yuborish" class="btn btn-primary">
+                                </div>
+
+                            </form>
+                        @else
+                            <div> Izoh qoldirish uchun
+                                <a href="{{route('login')}}" class="btn btn-primary">Kiring</a>
                             </div>
-
-                            <input type="hidden" value="{{$post->id}}" name="post_id">
-
-                            <div class="form-group mb-0">
-                                <input type="submit" value="yuborish" class="btn btn-primary">
-                            </div>
-
-                        </form>
+                        @endauth
                     </div>
                 </div>
 
@@ -129,7 +123,7 @@
                     {{--                    user--}}
                     <div class="d-flex flex-column text-center bg-secondary rounded mb-5 py-5 px-4">
                         <img src="/img/user.jpg" class="/img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
-                        <h3 class="text-white mb-3">John Doe</h3>
+                        <h3 class="text-white mb-3">{{auth()->user()->name}}</h3>
                         <p class="text-white m-0">Conset elitr erat vero dolor ipsum et diam, eos dolor lorem ipsum,
                             ipsum
                             ipsum sit no ut est. Guber ea ipsum erat kasd amet est elitr ea sit.</p>

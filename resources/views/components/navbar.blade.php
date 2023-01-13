@@ -16,6 +16,11 @@
 
         </div>
         @auth()
+            <form action="{{route('logout')}}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-danger d-none d-lg-block">Chiqish</button>
+            </form>
+
             <a href="{{route('posts.create')}}" class="btn btn-primary mr-3 d-none d-lg-block">Po`st yaratish</a>
         @else
             <a href="{{route('login')}}" class="btn btn-primary mr-3 d-none d-lg-block"> Kirish </a>
