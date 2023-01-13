@@ -14,15 +14,17 @@
                 <div class="col-lg-8">
                     <div class="row mb-4">
                         @auth()
-                            <a class="btn btn-sm btn-outline-dark mr-2" href="{{route('posts.edit',$post->id)}} ">O`zgartrish </a>
+                            @canany(['update-post','delete-post'], $post)
+                                <a class="btn btn-sm btn-outline-dark mr-2" href="{{route('posts.edit',$post->id)}} ">O`zgartrish </a>
 
-                            <form action="{{route( 'posts.destroy',['post'=>$post->id] )}}"
-                                  method="POST"
-                                  onSubmit="return confirm('Rostan ham o`chirilishini hohlaysizmi?');">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-sm btn-outline-danger" type="submit">O`chirish</button>
-                            </form>
+                                <form action="{{route( 'posts.destroy',['post'=>$post->id] )}}"
+                                      method="POST"
+                                      onSubmit="return confirm('Rostan ham o`chirilishini hohlaysizmi?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-outline-danger" type="submit">O`chirish</button>
+                                </form>
+                            @endcan
                         @endauth
                     </div>
                     <div class="mb-5">

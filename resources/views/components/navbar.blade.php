@@ -16,6 +16,9 @@
 
         </div>
         @auth()
+            <div>
+                {{ Auth::user()->name }}
+            </div>
             <form action="{{route('logout')}}" method="POST">
                 @csrf
                 <button type="submit" class="btn btn-danger d-none d-lg-block">Chiqish</button>

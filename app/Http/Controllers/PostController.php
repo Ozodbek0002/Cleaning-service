@@ -7,10 +7,17 @@ use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+        $this->authorizeResource(Post::class,'post');
+    }
 
     public function index(Request $request)
     {
@@ -80,6 +87,8 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
+        Gate::authorize('update', $post);
+
         return view('posts.edit', [
             'post' => $post
         ]);
@@ -88,6 +97,8 @@ class PostController extends Controller
 
     public function update(Request $request, Post $post)
     {
+        Gate::authorize('update', $post);
+
         if ($request->hasFile('photo')) {
 
             if (isset($post->photo)) {
