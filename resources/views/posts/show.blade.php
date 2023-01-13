@@ -47,7 +47,7 @@
                         <img class="/img-fluid rounded w-100 mb-4" src="{{ asset('storage/'.$post->photo) }}"
                              alt="Image">
                         <p>{{$post->content}}</p>
-                        <h2 class="mb-4">Est dolor lorem et ea</h2>
+                        <h2 class="mb-4">Est dolor lorem et ea rfghn</h2>
                         <img class="/img-fluid rounded w-50 float-left mr-4 mb-3"
                              src="{{ asset('storage/'.$post->photo) }}" alt="Image">
                         <p>Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor invidunt at
