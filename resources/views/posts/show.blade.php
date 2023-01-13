@@ -14,7 +14,7 @@
                 <div class="col-lg-8">
                     <div class="row mb-4">
                         @auth()
-                            @canany(['update-post','delete-post'], $post)
+                            @canany(['update','delete'], $post)
                                 <a class="btn btn-sm btn-outline-dark mr-2" href="{{route('posts.edit',$post->id)}} ">O`zgartrish </a>
 
                                 <form action="{{route( 'posts.destroy',['post'=>$post->id] )}}"
