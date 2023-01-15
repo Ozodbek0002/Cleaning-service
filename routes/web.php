@@ -8,7 +8,6 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AuthController;
 
 
-
 Route::get('/', [PageController::class,'main'])->name('main');
 
 Route::get('login',[AuthController::class,'login'])->name('login');
@@ -21,7 +20,7 @@ Route::get('/users',[UserController::class,'index']);
 
 Route::get('/about',[PageController::class, 'about'])->name('about');
 Route::get('/services',[PageController::class, 'services'])->name('services');
-Route::get('/projects',[PageController::class, 'projects'])->name('projects');
+Route::get('/projects',[PageController::class, 'projects'])->name('projects')->middleware('auth');
 Route::get('/contact',[PageController::class, 'contact'])->name('contact');
 
 
