@@ -10,9 +10,9 @@
             </div>
             <div class="col-md-6 text-center text-md-right">
                 <div class="d-inline-flex align-items-center">
-                    <a class="btn btn-sm btn-outline-light" href="">Home</a>
+                    <a class="btn btn-sm btn-outline-light" href="{{route('main')}}">Home</a>
                     <i class="fas fa-angle-double-right text-light mx-2"></i>
-                    <a class="btn btn-sm btn-outline-light disabled" href="">Service</a>
+                    <a class="btn btn-sm btn-outline-light disabled" href="#">{{$title}}</a>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
-    <a href="" class="navbar-brand d-block d-lg-none">
+    <a href="{{route('main')}}" class="navbar-brand d-block d-lg-none">
         <h1 class="m-0 display-4 text-primary">Klean</h1>
     </a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
