@@ -13,12 +13,13 @@
             <a href="{{route('projects')}}" class="nav-item nav-link {{ request()->routeIs('projects') ? 'active' : '' }}">Loyihalar</a>
             <a href="{{route('posts.index')}}" class="nav-item nav-link {{ request()->routeIs('posts.index') ? 'active' : '' }}">Bloglar</a>
             <a href="{{route('contact')}}" class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Aloqa</a>
-
         </div>
         @auth()
+
             <div>
                 {{ Auth::user()->name }}
             </div>
+
             <form action="{{route('logout')}}" method="POST">
                 @csrf
                 <button type="submit" class="btn btn-danger d-none d-lg-block">Chiqish</button>
