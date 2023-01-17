@@ -18,9 +18,12 @@ Route::post('authenticate',[AuthController::class, 'authenticate'])->name('authe
 
 Route::get('/users',[UserController::class,'index']);
 
+
+
+
 Route::get('/about',[PageController::class, 'about'])->name('about');
 Route::get('/services',[PageController::class, 'services'])->name('services');
-Route::get('/projects',[PageController::class, 'projects'])->name('projects')->middleware('auth');
+Route::get('/projects',[PageController::class, 'projects'])->name('projects');
 Route::get('/contact',[PageController::class, 'contact'])->name('contact');
 
 
