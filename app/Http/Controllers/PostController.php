@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\PostCreated;
 use App\Http\Requests\StorePostRequest;
+use App\Jobs\UploadBigFile;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -70,7 +71,10 @@ class PostController extends Controller
             }
         }
 
-        PostCreated::dispatch($post);
+        PostCreated::dispatch($post); // event
+
+
+        UploadBigFile::dispatch($request->file('photo')); // job
 
         return redirect()->route('posts.index');
 
