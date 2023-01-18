@@ -26,6 +26,6 @@ class PostCreated extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.posr-created');
+        return $this->view('mails.post-created');
     }
 }

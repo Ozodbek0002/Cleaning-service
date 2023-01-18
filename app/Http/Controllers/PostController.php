@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
+
 class PostController extends Controller
 {
 
@@ -80,6 +81,7 @@ class PostController extends Controller
         ChangePost::dispatch($post); // job
 
         Mail::to($request->user())->send(new \App\Mail\PostCreated($post));
+
 
         return redirect()->route('posts.index');
 
