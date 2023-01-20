@@ -31,7 +31,7 @@
 
                     <p class="mb-4">{{'Yangi post yaratildi id: '.$notification->data['id']}}</p>
 
-                    <a class="btn btn-sm btn-primary py-2"  href="{{ route('$notification.read',['notification'=>$notification->id]) }}"> O'qildi</a>
+                    <a class="btn btn-sm btn-primary py-2"  href="{{ route('notification.markAsRead',['notification'=>$notification->id]) }}"> O'qildi</a>
 
                 </div>
             @endforeach

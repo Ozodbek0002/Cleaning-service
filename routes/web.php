@@ -27,7 +27,7 @@ Route::get('/services',[PageController::class, 'services'])->name('services');
 Route::get('/projects',[PageController::class, 'projects'])->name('projects');
 Route::get('/contact',[PageController::class, 'contact'])->name('contact');
 
-
+Route::get('notifications/{notification}/markAsRead',[NotificationController::class,'markAsRead'])->name('notifications.markAsRead');
 Route::resources([
     'posts' => PostController::class,
     'comments' => CommentController::class,

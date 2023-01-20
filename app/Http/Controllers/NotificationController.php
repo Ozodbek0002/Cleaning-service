@@ -4,14 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class NotificationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return view('notifications.index',[
@@ -20,11 +17,7 @@ class NotificationController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
@@ -85,4 +78,11 @@ class NotificationController extends Controller
     {
         //
     }
+
+    public function markAsRead(Notification $notification)
+    {
+        $notification->markAsRead();
+        return redirect()->back();
+    }
+
 }
