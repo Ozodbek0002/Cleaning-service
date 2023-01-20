@@ -16,34 +16,30 @@
                 </div>
 
             </div>
-            @foreach ($posts as $post)
+            @foreach ($notifications as $notification)
                 <div class=" border mb-5 p-4 rounded">
                     <div class="position-relative mb-4">
                         <div class="blog-date">
                             <h4 class="font-weight-bold mb-n1">New</h4>
                         </div>
                     </div>
-{{--                    <div class="d-flex mb-2">--}}
-{{--                        @foreach($post->tags as $tag)--}}
-{{--                            <a class="text-secondary text-uppercase font-weight-medium">{{$tag->name}}</a>--}}
-{{--                            <span class="text-primary px-2">|</span>--}}
-{{--                        @endforeach--}}
-{{--                    </div>--}}
-                    <a href="{{route('posts.index',['category_id'=>$post->category->id])}}"
-                       class="text-danger text-uppercase font-weight-medium">{{ $post->category->name }}</a>
+                    <a href="{{'a'}}"
+                       class="text-danger text-uppercase font-weight-medium">{{ 'cate' }}
+                    </a>
 
-                    <h5 class="font-weight-medium mb-2">{{$post->title}}</h5>
-                    <p class="mb-4">{{$post->short_content}}</p>
-                    <a class="btn btn-sm btn-primary py-2"
-                       href="{{route('posts.show',['post'=>$post->id])}}">Ko'rish</a>
+                    <h5 class="font-weight-medium mb-2">{{'title'}}</h5>
+
+                    <p class="mb-4">{{'id'}}</p>
+
+                    <a class="btn btn-sm btn-primary py-2"  href="{{'s'}}"> O'qildi</a>
 
                 </div>
             @endforeach
 
 
-            @if ($posts->hasPages())
+            @if ($notifications->hasPages())
                 <div class="pagination-wrapper">
-                    {{ $posts->links() }}
+                    {{ $notifications->links() }}
                 </div>
             @endif
 
