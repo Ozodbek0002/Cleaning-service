@@ -11,14 +11,12 @@ class Postcreated extends Notification
 {
     use Queueable;
 
-    /**
-     * Create a new notification instance.
-     *
-     * @return void
-     */
-    public function __construct()
+
+    public $post;
+
+    public function __construct($post)
     {
-        //
+        $this->post = $post;
     }
 
     /**
@@ -55,7 +53,9 @@ class Postcreated extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            'id'=> $this->post->id,
+            'title'=> $this->post->title,
+            'created_at'=> $this->post->created_at,
         ];
     }
 }

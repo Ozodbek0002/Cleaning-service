@@ -10,9 +10,14 @@ use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
+use App\Notifications\Postcreated as NotificationPostCreate;
+use App\Mail\PostCreated as MailPostCreated;
+
 
 
 class PostController extends Controller
@@ -77,10 +82,14 @@ class PostController extends Controller
         PostCreated::dispatch($post); // event
 
 
-//        UploadBigFile::dispatch($request->file('photo')); // job
         ChangePost::dispatch($post); // job
 
-        Mail::to($request->user())->send(new \App\Mail\PostCreated($post));
+
+        Mail::to($request->user())->send(new MailPostCreated($post));  // mail yuborish
+
+
+//        Auth::user()->notify(new NotificationPostCreate($post));
+        Notification::send(Auth::user(), new NotificationPostCreate($post)); // notification yuborish
 
 
         return redirect()->route('posts.index');
