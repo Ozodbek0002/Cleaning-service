@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Support\Facades\Notification;
 
-class NotificationController extends Controller
+class NotificationController extends Controller implements ShouldQueue
 {
 
     public function __construct()
