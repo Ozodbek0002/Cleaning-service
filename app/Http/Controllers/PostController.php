@@ -29,6 +29,8 @@ class PostController extends Controller
         $this->authorizeResource(Post::class,'post');
     }
 
+
+
     public function index(Request $request)
     {
         if (isset($request->tag_id)) {

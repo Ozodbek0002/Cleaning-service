@@ -17,20 +17,18 @@
 
             </div>
             @foreach ($posts as $post)
-                <div class=" mb-5">
+                <div class=" border mb-5 p-4 rounded">
                     <div class="position-relative mb-4">
-                        <img class="img-fluid rounded w-100" src="{{ asset('storage/'.$post->photo) }}" alt="">
                         <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">01</h4>
-                            <small class="text-white text-uppercase">Jan</small>
+                            <h4 class="font-weight-bold mb-n1">New</h4>
                         </div>
                     </div>
-                    <div class="d-flex mb-2">
-                        @foreach($post->tags as $tag)
-                            <a class="text-secondary text-uppercase font-weight-medium">{{$tag->name}}</a>
-                            <span class="text-primary px-2">|</span>
-                        @endforeach
-                    </div>
+{{--                    <div class="d-flex mb-2">--}}
+{{--                        @foreach($post->tags as $tag)--}}
+{{--                            <a class="text-secondary text-uppercase font-weight-medium">{{$tag->name}}</a>--}}
+{{--                            <span class="text-primary px-2">|</span>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
                     <a href="{{route('posts.index',['category_id'=>$post->category->id])}}"
                        class="text-danger text-uppercase font-weight-medium">{{ $post->category->name }}</a>
 
