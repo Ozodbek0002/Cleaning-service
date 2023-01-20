@@ -24,14 +24,14 @@
                         </div>
                     </div>
                     <a href="{{'a'}}"
-                       class="text-danger text-uppercase font-weight-medium">{{ 'cate' }}
+                       class="text-danger text-uppercase font-weight-medium">{{ $notification->created_at }}
                     </a>
 
-                    <h5 class="font-weight-medium mb-2">{{'title'}}</h5>
+                    <h5 class="font-weight-medium mb-2">{{$notification->data['title']}}</h5>
 
-                    <p class="mb-4">{{'id'}}</p>
+                    <p class="mb-4">{{'Yangi post yaratildi id: '.$notification->data['id']}}</p>
 
-                    <a class="btn btn-sm btn-primary py-2"  href="{{'s'}}"> O'qildi</a>
+                    <a class="btn btn-sm btn-primary py-2"  href="{{ route('$notification.read',['notification'=>$notification->id]) }}"> O'qildi</a>
 
                 </div>
             @endforeach
