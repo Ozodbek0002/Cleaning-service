@@ -14,16 +14,18 @@
                 <div class="col-lg-6">
                     <h1 class="section-title mb-3"> Xabarnomalar </h1>
                 </div>
-
             </div>
+
             @foreach ($notifications as $notification)
                 <div class=" border mb-5 p-4 rounded">
                     <div class="position-relative mb-4">
-                        <div class="blog-date">
-                            <h4 class="font-weight-bold mb-n1">New</h4>
-                        </div>
+                        @if( $notification->read_at == null)
+                            <div class="blog-date">
+                                <h4 class="font-weight-bold mb-n1">New</h4>
+                            </div>
+                        @endif
                     </div>
-                    <a href="{{'a'}}"
+                    <a href="#"
                        class="text-danger text-uppercase font-weight-medium">{{ $notification->created_at }}
                     </a>
 
@@ -31,8 +33,10 @@
 
                     <p class="mb-4">{{'Yangi post yaratildi id: '.$notification->data['id']}}</p>
 
-                    <a class="btn btn-sm btn-primary py-2"  href="{{ route('notification.markAsRead',['notification'=>$notification->id]) }}"> O'qildi</a>
-
+                    <a class="btn btn-sm btn-primary py-2"
+                       href="{{ route('notification.markAsRead',['notification'=>$notification->id]) }}">
+                        O'qildi
+                    </a>
                 </div>
             @endforeach
 

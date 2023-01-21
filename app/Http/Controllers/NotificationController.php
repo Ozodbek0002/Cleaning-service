@@ -20,7 +20,7 @@ class NotificationController extends Controller implements ShouldQueue
     {
         return view('notifications.index',[
             'posts'=>Post::latest()->paginate(12),
-            'notifications'=>auth()->user()->unreadNotifications()->paginate(12),
+            'notifications'=>auth()->user()->Notifications()->paginate(12),
         ]);
     }
 
