@@ -26,8 +26,7 @@ Route::get('/projects', [PageController::class, 'projects'])->name('projects');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 Route::middleware('auth')->group(function () {
-    Route::get('notification/{notification}/markAsRead', [NotificationController::class, 'markAsRead'])->name('notification   .markAsRead');
-
+    Route::get('notification/{notification}/markAsRead', [NotificationController::class, 'markAsRead'])->name('notification.markAsRead');
 });
 
 
