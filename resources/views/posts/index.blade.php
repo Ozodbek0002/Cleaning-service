@@ -12,7 +12,6 @@
         <div class="container">
             <div class="row align-items-end mb-4">
                 <div class="col-lg-6">
-{{--                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">Latest Blog</h6>--}}
                     <h1 class="section-title mb-3"> {{$title}} </h1>
                 </div>
 
@@ -22,10 +21,10 @@
                 @foreach ($posts as $post)
                     <div class="col-lg-4 col-md-6 mb-5">
                         <div class="position-relative mb-4">
-                            <img class="img-fluid rounded w-100" src="{{ asset('storage/'.$post->photo) }}" alt="">
+                            <img style="width: 300px; height: 300px;" class="img-fluid rounded w-100" src="{{ asset('storage/'.$post->photo) }}" alt="">
                             <div class="blog-date">
-                                <h4 class="font-weight-bold mb-n1">01</h4>
-                                <small class="text-white text-uppercase">Jan</small>
+                                <h4 class="font-weight-bold mb-n1">{{date_format($post->created_at,'d')}}</h4>
+                                <small class="text-white text-uppercase">{{date_format($post->created_at,'M')}}</small>
                             </div>
                         </div>
                         <div class="d-flex mb-2">
