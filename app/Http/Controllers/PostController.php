@@ -11,6 +11,7 @@ use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
@@ -39,7 +40,11 @@ class PostController extends Controller
             $posts = Post::where('category_id',$request->category_id)->paginate(12);
             $title = $posts[0]->category->name;
         } else {
-            $posts = Post::latest()->paginate(12);
+//            $posts = Post::latest()->paginate(12);
+                $posts = Cache::remember('posts', now()->addSeconds(60), function () {
+                return Post::latest()->paginate(12);
+            });
+
             $title = 'Oxirgi postlar';
         }
         return view('posts.index', [
