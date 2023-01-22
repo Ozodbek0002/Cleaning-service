@@ -20,16 +20,14 @@ use App\Notifications\Postcreated as NotificationPostCreate;
 use App\Mail\PostCreated as MailPostCreated;
 
 
-
 class PostController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['index','show']);
-        $this->authorizeResource(Post::class,'post');
+        $this->middleware('auth')->except(['index', 'show']);
+        $this->authorizeResource(Post::class, 'post');
     }
-
 
 
     public function index(Request $request)
@@ -37,11 +35,11 @@ class PostController extends Controller
         if (isset($request->tag_id)) {
             $posts = Post::latest()->paginate(12);
         } elseif (isset($request->category_id)) {
-            $posts = Post::where('category_id',$request->category_id)->paginate(12);
+            $posts = Post::where('category_id', $request->category_id)->paginate(12);
             $title = $posts[0]->category->name;
         } else {
 //            $posts = Post::latest()->paginate(12);
-                $posts = Cache::remember('posts', now()->addSeconds(60), function () {
+            $posts = Cache::remember('posts', now()->addSeconds(60), function () {
                 return Post::latest()->paginate(12);
             });
 
@@ -49,7 +47,7 @@ class PostController extends Controller
         }
         return view('posts.index', [
             'posts' => $posts,
-            'title'=>$title,
+            'title' => $title,
         ]);
     }
 
