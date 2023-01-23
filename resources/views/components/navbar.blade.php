@@ -18,7 +18,12 @@
                class="nav-item nav-link {{ request()->routeIs('posts.index') ? 'active' : '' }}">Bloglar</a>
             <a href="{{route('contact')}}"
                class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Aloqa</a>
+
+
         </div>
+            <a href="#" class="btn btn-primary mr-3 d-none d-lg-block">
+                {{    }}
+            </a>
         @auth()
 
             <div>
