@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
 
 
         View::composer('components.navbar', function ($view) {
-            $view->with('current', App::currentLocale());
+            $view->with('current_locate', App::currentLocale());
         });
 
     }
