@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::get('notification/{notification}/markAsRead', [NotificationController::class, 'markAsRead'])->name('notification.markAsRead');
 });
 
+Route::get('language/{locale}',);
 
 Route::resources([
     'posts' => PostController::class,

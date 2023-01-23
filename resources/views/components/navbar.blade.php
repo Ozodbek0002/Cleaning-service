@@ -19,11 +19,13 @@
             <a href="{{route('contact')}}"
                class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Aloqa</a>
 
-
         </div>
+
+        @foreach( $all_locale as $locale)
             <a href="#" class="btn btn-primary mr-3 d-none d-lg-block">
-                {{    }}
+                {{  $locale  }}
             </a>
+        @endforeach
         @auth()
 
             <div>
