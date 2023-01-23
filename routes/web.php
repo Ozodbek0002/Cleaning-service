@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\LanguageController;
 
 
 Route::get('/', [PageController::class, 'main'])->name('main');
@@ -29,7 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('notification/{notification}/markAsRead', [NotificationController::class, 'markAsRead'])->name('notification.markAsRead');
 });
 
-Route::get('language/{locale}',);
+Route::get('language/{locale}',[LanguageController::class, 'change_language'])->name('language.change');
 
 Route::resources([
     'posts' => PostController::class,
