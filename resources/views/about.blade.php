@@ -4,16 +4,8 @@
         {{__('Biz haqimizda')}}
     </x-slot:title>
 
-    @if($current_locale === 'uz')
-        <x-slot:meta_description>
-            {{__('Biz haqimizda')}}
-        </x-slot:meta_description>
-    @else
-        <x-slot:meta_description>
-            {{__('About us')}}
-        </x-slot:meta_description>
-    @endif
 
+    <x-page-header title="{{__('Biz haqimizda')}}"/>
 
 
     <!-- About Start -->
