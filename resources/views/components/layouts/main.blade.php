@@ -34,7 +34,7 @@
     <div class="row">
         <div class="col-lg-3 bg-secondary d-none d-lg-block">
             <a href="" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                <h1 class="m-0 display-3 text-primary">Klean</h1>
+                <h1 class="m-0 display-3 text-primary"> {{__('Klean')}} </h1>
             </a>
         </div>
         <div class="col-lg-9">
@@ -42,11 +42,11 @@
                 <div class="col-lg-7 text-left text-white">
                     <div class="h-100 d-inline-flex align-items-center border-right border-primary py-2 px-3">
                         <i class="fa fa-envelope text-primary mr-2"></i>
-                        <small>info@example.com</small>
+                        <small>ozodbekozodov0002@gmail.com</small>
                     </div>
                     <div class="h-100 d-inline-flex align-items-center py-2 px-2">
                         <i class="fa fa-phone-alt text-primary mr-2"></i>
-                        <small>+012 345 6789</small>
+                        <small>+99891 277 09 19</small>
                     </div>
                 </div>
                 <div class="col-lg-5 text-right">

@@ -28,9 +28,9 @@
                             </div>
                         </div>
 
-                        <div class="form-inline"> <input type="checkbox" name="remember" id="remember"> <label for="remember" class="text-muted">{{__('Eslab qolish')}}</label> <a href="#" id="forgot" class="font-weight-bold">parolni unitdingizmi?</a> </div>
+                        <div class="form-inline"> <input type="checkbox" name="remember" id="remember"> <label for="remember" class="text-muted">{{__('Eslab qolish')}}</label> <a href="#" id="forgot" class="font-weight-bold">{{__('Parolni unutdingizmi?')}}</a> </div>
                         <button type="submit" class="btn btn-primary btn-block mt-3">{{__('Kirish')}}</button>
-                        <div class="text-center pt-4 text-muted">{{__('Ro`yhatdan o`tmaganmisiz?')}} <a href="{{route('register')}}">{{__('Ro`yhatdan o`tish')}}</a> </div>
+                        <div class="text-center pt-4 text-muted">{{__('Ro`yhatdan o`tmaganmisiz?')}} <a href="{{route('register')}}">{{__('Ro`yxatdan o`tish')}}</a> </div>
                     </form>
                 </div>
                 <div class="mx-3 my-2 py-2 bordert">
