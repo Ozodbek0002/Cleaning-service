@@ -1,14 +1,16 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
     <a href="{{route('main')}}" class="navbar-brand d-block d-lg-none">
-        <h1 class="m-0 display-4 text-primary">Klean</h1>
+        <h1 class="m-0 display-4 text-primary"> {{_('Klean')}} </h1>
     </a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav mr-auto py-0">
-            <a href="{{ url('/') }}" class="nav-item nav-link {{ request()->routeIs('/') ? 'active' : '' }}">{{ __('Bosh sahifa') }}</a>
-            <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">{{__('Biz haqimizda')}}</a>
+            <a href="{{ url('/') }}"
+               class="nav-item nav-link {{ request()->routeIs('/') ? 'active' : '' }}">{{ __('Bosh sahifa') }}</a>
+            <a href="{{ route('about') }}"
+               class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">{{__('Biz haqimizda')}}</a>
             <a href="{{ route('services') }}"
                class="nav-item nav-link {{ request()->routeIs('services') ? 'active' : '' }}">{{__('Servislar')}}</a>
             <a href="{{route('projects')}}"
@@ -21,9 +23,17 @@
         </div>
 
         @foreach( $all_locale as $locale)
-            <a href="{{route('language.change',['locale'=>$locale])}}" >
-                {{  $locale  }}
-            </a>
+            @if($current_locale === $locale)
+                <a href="{{route('language.change',['locale'=>$locale])}}"
+                   class="btn btn-danger mr-3 d-none d-lg-block">
+                    {{  $locale  }}
+                </a>
+                @continue
+            @endif
+                <a href="{{route('language.change',['locale'=>$locale])}}"
+                   class="btn btn-primary mr-3 d-none d-lg-block">
+                    {{  $locale  }}
+                </a>
         @endforeach
         @auth()
 
@@ -54,12 +64,12 @@
 
             <form action="{{route('logout')}}" method="GET">
                 @csrf
-                <button type="submit" class="btn btn-danger d-none d-lg-block">Chiqish</button>
+                <button type="submit" class="btn btn-danger d-none d-lg-block"> {{__('Chiqish')}} </button>
             </form>
 
-            <a href="{{route('posts.create')}}" class="btn btn-primary mr-3 d-none d-lg-block">Po`st yaratish</a>
+            <a href="{{route('posts.create')}}" class="btn btn-primary mr-3 d-none d-lg-block"> {{__('Po`st yaratish')}} </a>
         @else
-            <a href="{{route('login')}}" class="btn btn-primary mr-3 d-none d-lg-block"> Kirish </a>
+            <a href="{{route('login')}}" class="btn btn-primary mr-3 d-none d-lg-block"> {{__('Kirish')}} </a>
         @endauth
     </div>
 </nav>

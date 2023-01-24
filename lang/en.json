@@ -1,8 +1,18 @@
 {
+    "Klean": "Klean",
     "Bosh sahifa": "Main",
     "Biz haqimizda": "About us",
     "Servislar": "Services",
     "Portfolio": "Portfolio",
     "Bloglar": "Blog",
-    "Aloqa": "Contact"
+    "Aloqa": "Contact",
+    "Chiqish": "Logout",
+    "Po`st yaratish": "Create post",
+    "Po`stlar": "Posts",
+    "Kirish": "Login",
+    "Ro`yxatdan o`tish": "Register",
+    "Parolni unutdingizmi?": "Forgot your password?",
+    "Parolni tiklash": "Reset password",
+
+
 }
