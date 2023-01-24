@@ -1,7 +1,7 @@
 <x-layouts.main xmlns:x-slot="http://www.w3.org/1999/xlink">
 
     <x-slot:title>
-        Bosh sahifa
+        {{__('Bosh sahifa')}}
     </x-slot:title>
 
 
@@ -18,7 +18,7 @@
                     <img class="img-fluid" src="img/carousel-1.jpg" alt="Image">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <h5 class="text-primary text-uppercase mb-md-3">Cleaning Services</h5>
+                            <h5 class="text-primary text-uppercase mb-md-3"> Cleaning Services </h5>
                             <h1 class="display-3 text-white mb-md-4">Best Quality Solution In Cleaning</h1>
                             <a href="" class="btn btn-primary">Get A Quote</a>
                         </div>

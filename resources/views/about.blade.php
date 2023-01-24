@@ -1,10 +1,19 @@
 <x-layouts.main xmlns:x-slot="http://www.w3.org/1999/xlink">
 
     <x-slot:title>
-        Biz haqimizda
+        {{__('Biz haqimizda')}}
     </x-slot:title>
 
-    <x-page-header title="Biz haqimizda"/>
+    @if($current_locale === 'uz')
+        <x-slot:meta_description>
+            {{__('Biz haqimizda')}}
+        </x-slot:meta_description>
+    @else
+        <x-slot:meta_description>
+            {{__('About us')}}
+        </x-slot:meta_description>
+    @endif
+
 
 
     <!-- About Start -->
