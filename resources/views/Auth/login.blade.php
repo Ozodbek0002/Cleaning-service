@@ -2,7 +2,7 @@
 <x-layouts.auth xmlns:x-slot="http://www.w3.org/1999/xlink">
 
     <x-slot:title>
-        Login
+        {{__('Kirish')}}
     </x-slot:title>
 
 
@@ -12,7 +12,7 @@
         <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
             <div class="panel border bg-white">
                 <div class="panel-heading">
-                    <h3 class="pt-3 font-weight-bold">Kirish</h3>
+                    <h3 class="pt-3 font-weight-bold"> {{__('Kirish')}} </h3>
                 </div>
                 <div class="panel-body p-3">
                     <form action="{{route('authenticate')}}" method="POST" >
@@ -28,9 +28,9 @@
                             </div>
                         </div>
 
-                        <div class="form-inline"> <input type="checkbox" name="remember" id="remember"> <label for="remember" class="text-muted">Eslab qolish</label> <a href="#" id="forgot" class="font-weight-bold">parolni unitdingizmi?</a> </div>
-                        <button type="submit" class="btn btn-primary btn-block mt-3">Kirish</button>
-                        <div class="text-center pt-4 text-muted">Ro`yhatdan o`tmaganmisiz? <a href="{{route('register')}}">Ro`yhatdan o`tish</a> </div>
+                        <div class="form-inline"> <input type="checkbox" name="remember" id="remember"> <label for="remember" class="text-muted">{{__('Eslab qolish')}}</label> <a href="#" id="forgot" class="font-weight-bold">parolni unitdingizmi?</a> </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-3">{{__('Kirish')}}</button>
+                        <div class="text-center pt-4 text-muted">{{__('Ro`yhatdan o`tmaganmisiz?')}} <a href="{{route('register')}}">{{__('Ro`yhatdan o`tish')}}</a> </div>
                     </form>
                 </div>
                 <div class="mx-3 my-2 py-2 bordert">

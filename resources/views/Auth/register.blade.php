@@ -2,7 +2,7 @@
 <x-layouts.auth xmlns:x-slot="http://www.w3.org/1999/xlink">
 
     <x-slot:title>
-        Register
+        {{__('Ro`yhatdan o`tish')}}
     </x-slot:title>
 
 
@@ -12,7 +12,7 @@
             <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
                 <div class="panel border bg-white">
                     <div class="panel-heading">
-                        <h3 class="pt-3 font-weight-bold">Ro`yhatdan o`tish</h3>
+                        <h3 class="pt-3 font-weight-bold">{{__('Ro`yhatdan o`tish')}}</h3>
                     </div>
 
                     <div class="panel-body p-3">
@@ -47,10 +47,10 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-block mt-3">Ro`yhatdan o`tish</button>
+                            <button type="submit" class="btn btn-primary btn-block mt-3">{{__('Ro`yhatdan o`tish')}}</button>
 
-                            <div class="text-center pt-4 text-muted">Ro`yhatdan o`tganmisiz?
-                                <a href="{{route('login')}}">Kirish</a>
+                            <div class="text-center pt-4 text-muted">{{__('Ro`yhatdan o`tganmisiz?')}}
+                                <a href="{{route('login')}}">{{__('Kirish')}}</a>
                             </div>
 
                         </form>
