@@ -21,7 +21,7 @@
         </div>
 
         @foreach( $all_locale as $locale)
-            <a href="{{route('language.change',['locale'=>$locale])}}" class="btn btn-primary mr-3 d-none d-lg-block">
+            <a href="{{route('language.change',['locale'=>$locale])}}" >
                 {{  $locale  }}
             </a>
         @endforeach
