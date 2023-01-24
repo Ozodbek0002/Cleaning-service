@@ -43,7 +43,12 @@ class PostController extends Controller
                 return Post::latest()->paginate(12);
             });
 
+            if ($current_locale = app()->getLocale() == 'uz'){
             $title = 'Oxirgi postlar';
+            }
+            else{
+                $title = 'Last posts';
+            }
         }
         return view('posts.index', [
             'posts' => $posts,

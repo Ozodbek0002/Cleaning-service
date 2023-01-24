@@ -1,10 +1,10 @@
 <x-layouts.main xmlns:x-slot="http://www.w3.org/1999/xlink">
 
     <x-slot:title>
-        Postlar
+        {{__('Postlar')}}
     </x-slot:title>
 
-    <x-page-header title="Postlar"/>
+    <x-page-header title="{{__('Postlar')}}"/>
 
 
     <!-- Blog Start -->
@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row align-items-end mb-4">
                 <div class="col-lg-6">
-                    <h1 class="section-title mb-3"> {{$title}} </h1>
+                    <h1 class="section-title mb-3"> {{ $title }} </h1>
                 </div>
 
             </div>
