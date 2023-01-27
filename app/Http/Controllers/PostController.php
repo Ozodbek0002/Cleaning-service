@@ -102,7 +102,7 @@ class PostController extends Controller
         Notification::send(Auth::user(), new NotificationPostCreate($post)); // notification yuborish
 
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('success','Post yaratildi');
 
     }
 

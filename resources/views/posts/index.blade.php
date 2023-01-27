@@ -10,10 +10,16 @@
     <!-- Blog Start -->
     <div class="container-fluid py-5">
         <div class="container">
+            @if(session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{__('Post yaratildi!')}}
+                </div>
+            @endif
             <div class="row align-items-end mb-4">
                 <div class="col-lg-6">
                     <h1 class="section-title mb-3"> {{ $title }} </h1>
                 </div>
+
 
             </div>
             <div class="row">
