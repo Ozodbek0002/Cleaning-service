@@ -7,6 +7,7 @@
     </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav mr-auto py-0">
+
             <a href="{{ url('/') }}"
                class="nav-item nav-link {{ request()->routeIs('/') ? 'active' : '' }}">{{ __('Bosh sahifa') }}</a>
             <a href="{{ route('about') }}"

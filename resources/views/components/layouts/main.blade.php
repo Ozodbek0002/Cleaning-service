@@ -125,19 +125,21 @@
                 <div class="input-group">
                     <input type="text" class="form-control border-0" style="padding: 25px;" placeholder="Your Email">
                     <div class="input-group-append">
-                        <button class="btn btn-primary px-4">Sign Up</button>
+                        <button class="btn btn-primary px-4"><a style="color: black" href="{{route('register')}}">{{__('Ro`yxatdan o`tish')}}</a></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5"
      style="border-color: #3E3E4E !important;">
     <div class="row">
         <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-            <p class="m-0 text-white">&copy; <a href="#">Klean</a>. All Rights Reserved. Designed by <a
-                    href="https://htmlcodex.com">HTML Codex</a>
+            <p class="m-0 text-white">&copy; <a href="#">Klean</a>. All Rights Reserved. Designed by
+{{--                    href="https://htmlcodex.com">HTML Codex</a>--}}
             </p>
         </div>
         <div class="col-lg-6 text-center text-md-right">
