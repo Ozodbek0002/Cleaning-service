@@ -24,6 +24,7 @@
         </div>
 
         @foreach( $all_locale as $locale)
+
             @if($current_locale === $locale)
                 <a href="{{route('language.change',['locale'=>$locale])}}"
                    class="btn btn-danger mr-3 d-none d-lg-block">
@@ -36,6 +37,7 @@
                     {{  $locale  }}
                 </a>
         @endforeach
+
         @auth()
 
             <div>
