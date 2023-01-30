@@ -33,12 +33,14 @@ class PostController extends Controller
     public function index(Request $request)
     {
         if (isset($request->tag_id)) {
+
             $posts = Post::latest()->paginate(12);
+
         } elseif (isset($request->category_id)) {
             $posts = Post::where('category_id', $request->category_id)->paginate(12);
             $title = $posts[0]->category->name;
+
         } else {
-//            $posts = Post::latest()->paginate(12);
             $posts = Cache::remember('posts', now()->addSeconds(60), function () {
                 return Post::latest()->paginate(12);
             });
@@ -50,6 +52,8 @@ class PostController extends Controller
                 $title = 'Last posts';
             }
         }
+
+
         return view('posts.index', [
             'posts' => $posts,
             'title' => $title,
