@@ -58,8 +58,8 @@
                     class="contact-info-item d-flex align-items-center justify-content-center bg-primary text-white py-4 py-lg-0">
                     <i class="fa fa-3x fa-map-marker-alt text-secondary mr-4"></i>
                     <div class="">
-                        <h5 class="mb-2">Our Office</h5>
-                        <p class="m-0">123 Street, New York, USA</p>
+                        <h5 class="mb-2">{{__('Bizning ofisimiz')}}</h5>
+                        <p class="m-0">{{__('Urganch shahri,Al-Xorazimy ko`cha 110')}}</p>
                     </div>
                 </div>
             </div>
@@ -68,8 +68,8 @@
                     class="contact-info-item d-flex align-items-center justify-content-center bg-secondary text-white py-4 py-lg-0">
                     <i class="fa fa-3x fa-envelope-open text-primary mr-4"></i>
                     <div class="">
-                        <h5 class="mb-2">Email Us</h5>
-                        <p class="m-0">info@example.com</p>
+                        <h5 class="mb-2">{{__('Emailimz')}}</h5>
+                        <p class="m-0">Amufosftuz@email.com</p>
                     </div>
                 </div>
             </div>
@@ -78,8 +78,8 @@
                     class="contact-info-item d-flex align-items-center justify-content-center bg-primary text-white py-4 py-lg-0">
                     <i class="fa fa-3x fa-phone-alt text-secondary mr-4"></i>
                     <div class="">
-                        <h5 class="mb-2">Call Us</h5>
-                        <p class="m-0">+012 345 6789</p>
+                        <h5 class="mb-2">{{__('Biz bilan bog`laning')}}</h5>
+                        <p class="m-0">+998 91 277 09 19</p>
                     </div>
                 </div>
             </div>
@@ -96,22 +96,21 @@
                     <div
                         class="d-flex flex-column align-items-center justify-content-center bg-about rounded h-100 py-5 px-3">
                         <i class="fa fa-5x fa-award text-primary mb-4"></i>
-                        <h1 class="display-2 text-white mb-2" data-toggle="counter-up">25</h1>
-                        <h2 class="text-white m-0">Years Experience</h2>
+                        <h1 class="display-2 text-white mb-2" data-toggle="counter-up">5</h1>
+                        <h2 class="text-white m-0">{{__('Yillik tajriba')}}</h2>
                     </div>
                 </div>
                 <div class="col-lg-7 pt-5 pb-lg-5">
-                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">Learn About Us</h6>
-                    <h1 class="mb-4 section-title">We Provide The Best Cleaning Services</h1>
-                    <h5 class="text-muted font-weight-normal mb-3">Eos kasd eos dolor vero vero, lorem stet diam rebum.
-                        Ipsum amet sed vero dolor sea lorem justo est dolor eos</h5>
+                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">{{__('Biz haqimizda ma`lumot')}}</h6>
+                    <h1 class="mb-4 section-title">{{__('Biz eng yaxshi tozalash xizmatlarini taqdim etamiz')}}</h1>
+                    <h5 class="text-muted font-weight-normal mb-3">{{__('Biznign xizmatimiz bilan sizning uyingiz, saxsiy xonangiz, ishxonangiz va hohlagan joyingiz yangidek bo`ladi')}}</h5>
                     <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
                         ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
                         dolor</p>
                     <div class="d-flex align-items-center pt-4">
                         <a href="" class="btn btn-primary mr-5">Learn More</a>
                         <button type="button" class="btn-play" data-toggle="modal"
-                                data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+                                data-src="https://youtu.be/Ad7mZ16ACB0" data-target="#videoModal">
                             <span></span>
                         </button>
                         <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">Play Video</h5>

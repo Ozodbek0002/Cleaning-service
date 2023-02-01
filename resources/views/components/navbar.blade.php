@@ -27,7 +27,7 @@
 
             @if($current_locale === $locale)
                 <a href="{{route('language.change',['locale'=>$locale])}}"
-                   class="btn btn-danger mr-3 d-none d-lg-block">
+                   class="btn btn-secondary mr-3 d-none d-lg-block">
                     {{  $locale  }}
                 </a>
                 @continue
@@ -38,28 +38,28 @@
             </a>
         @endforeach
 
-{{--        <select name="language-picker-select" id="language-picker-select">--}}
-{{--            @foreach( $all_locale as $locale)--}}
+        {{--        <select name="language-picker-select" id="language-picker-select">--}}
+        {{--            @foreach( $all_locale as $locale)--}}
 
 
-{{--                <option>--}}
-{{--                    --}}
-{{--                    @if($current_locale === $locale)--}}
-{{--                        <a href="{{route('language.change',['locale'=>$locale])}}"--}}
-{{--                           class="btn btn-danger mr-3 d-none d-lg-block">--}}
-{{--                            {{  $locale  }}--}}
-{{--                        </a>--}}
-{{--                        @continue--}}
-{{--                    @endif--}}
-{{--                    <a href="{{route('language.change',['locale'=>$locale])}}"--}}
-{{--                       class="btn btn-primary mr-3 d-none d-lg-block">--}}
-{{--                        {{  $locale  }}--}}
-{{--                    </a>--}}
+        {{--                <option>--}}
+        {{--                    --}}
+        {{--                    @if($current_locale === $locale)--}}
+        {{--                        <a href="{{route('language.change',['locale'=>$locale])}}"--}}
+        {{--                           class="btn btn-danger mr-3 d-none d-lg-block">--}}
+        {{--                            {{  $locale  }}--}}
+        {{--                        </a>--}}
+        {{--                        @continue--}}
+        {{--                    @endif--}}
+        {{--                    <a href="{{route('language.change',['locale'=>$locale])}}"--}}
+        {{--                       class="btn btn-primary mr-3 d-none d-lg-block">--}}
+        {{--                        {{  $locale  }}--}}
+        {{--                    </a>--}}
 
-{{--                </option>--}}
-{{--            @endforeach--}}
+        {{--                </option>--}}
+        {{--            @endforeach--}}
 
-{{--        </select>--}}
+        {{--        </select>--}}
 
         @auth()
 
@@ -84,6 +84,7 @@
 
             </div>
 
+
             <div>
                 {{ Auth::user()->name }}
             </div>
@@ -93,8 +94,11 @@
                 <button type="submit" class="btn btn-danger d-none d-lg-block"> {{__('Chiqish')}} </button>
             </form>
 
+
             <a href="{{route('posts.create')}}"
-               class="btn btn-primary mr-3 d-none d-lg-block"> {{__('Po`st yaratish')}} </a>
+               class="btn btn-primary mr-3 d-none d-lg-block"> {{__('Po`st yaratish')}}
+            </a>
+
         @else
             <a href="{{route('login')}}" class="btn btn-primary mr-3 d-none d-lg-block"> {{__('Kirish')}} </a>
         @endauth
