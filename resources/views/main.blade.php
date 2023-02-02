@@ -104,11 +104,11 @@
                     <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">{{__('Biz haqimizda ma`lumot')}}</h6>
                     <h1 class="mb-4 section-title">{{__('Biz eng yaxshi tozalash xizmatlarini taqdim etamiz')}}</h1>
                     <h5 class="text-muted font-weight-normal mb-3">{{__('Biznign xizmatimiz bilan sizning uyingiz, saxsiy xonangiz, ishxonangiz va hohlagan joyingiz yangidek bo`ladi')}}</h5>
-                    <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
-                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-                        dolor</p>
+{{--                    <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,--}}
+{{--                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est--}}
+{{--                        dolor</p>--}}
                     <div class="d-flex align-items-center pt-4">
-                        <a href="" class="btn btn-primary mr-5">Learn More</a>
+{{--                        <a href="" class="btn btn-primary mr-5">Learn More</a>--}}
                         <button type="button" class="btn-play" data-toggle="modal"
                                 data-src="https://youtu.be/Ad7mZ16ACB0" data-target="#videoModal">
                             <span></span>
