@@ -148,10 +148,10 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">{{__('Bizning servisimz')}}</h6>
+                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">{{__('Bizning xizmatlar')}}</h6>
                     <h1 class="mb-4 section-title text-white">{{__('Siz uchun ajoyib tozalash xizmatlari')}}</h1>
-                    <p class="text-white">{{__('')}}</p>
-                    <a href="" class="btn btn-primary mt-3 py-2 px-4">More Services</a>
+                    <p class="text-white">{{__('Biznign xizmatimiz bilan sizning uyingiz, saxsiy xonangiz, ishxonangiz va hohlagan joyingiz yangidek bo`ladi')}}</p>
+                    <a href="" class="btn btn-primary mt-3 py-2 px-4">{{__('Boshqa xizmatlar')}}</a>
                 </div>
                 <div class="col-lg-6 pt-5 pt-lg-0">
                     <div class="owl-carousel service-carousel position-relative">
