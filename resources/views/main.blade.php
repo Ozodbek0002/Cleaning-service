@@ -113,7 +113,7 @@
                                 data-src="https://youtu.be/Ad7mZ16ACB0" data-target="#videoModal">
                             <span></span>
                         </button>
-                        <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">Play Video</h5>
+                        <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">{{__('Videoni ijro etish')}}</h5>
                     </div>
                 </div>
             </div>
