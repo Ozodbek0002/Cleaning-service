@@ -1,5 +1,4 @@
-<x-layouts.main xmlns:x-slot="http://www.w3.org/1999/xlink"
->
+<x-layouts.main xmlns:x-slot="http://www.w3.org/1999/xlink">
 
     <x-slot:title>
         {{__('Bosh sahifa')}}
@@ -21,7 +20,7 @@
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-primary text-uppercase mb-md-3"> {{__('Tozalash xizmatlari')}} </h5>
                             <h1 class="display-3 text-white mb-md-4">{{__('Tozalashda eng yaxshi sifatli yechim')}}</h1>
-                            {{--                            <a href="" class="btn btn-primary">Get A Quote</a>--}}
+{{--                            <a href="" class="btn btn-primary">Get A Quote</a>--}}
                         </div>
                     </div>
                 </div>
@@ -31,7 +30,7 @@
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-primary text-uppercase mb-md-3">{{__('Tozalash xizmatlari')}}</h5>
                             <h1 class="display-3 text-white mb-md-4">{{__('Yuqori professional tozalash xizmatlari')}}</h1>
-                            {{--                            <a href="" class="btn btn-primary">Get A Quote</a>--}}
+{{--                            <a href="" class="btn btn-primary">Get A Quote</a>--}}
                         </div>
                     </div>
                 </div>
@@ -41,7 +40,7 @@
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-primary text-uppercase mb-md-3">{{__('Tozalash xizmatlari')}}</h5>
                             <h1 class="display-3 text-white mb-md-4">{{__('Tajribali va mahoratli tozalovchilar')}}</h1>
-                            {{--                            <a href="" class="btn btn-primary">Get A Quote</a>--}}
+{{--                            <a href="" class="btn btn-primary">Get A Quote</a>--}}
                         </div>
                     </div>
                 </div>
@@ -105,11 +104,11 @@
                     <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">{{__('Biz haqimizda ma`lumot')}}</h6>
                     <h1 class="mb-4 section-title">{{__('Biz eng yaxshi tozalash xizmatlarini taqdim etamiz')}}</h1>
                     <h5 class="text-muted font-weight-normal mb-3">{{__('Biznign xizmatimiz bilan sizning uyingiz, saxsiy xonangiz, ishxonangiz va hohlagan joyingiz yangidek bo`ladi')}}</h5>
-                    {{--                    <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,--}}
-                    {{--                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est--}}
-                    {{--                        dolor</p>--}}
+{{--                    <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,--}}
+{{--                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est--}}
+{{--                        dolor</p>--}}
                     <div class="d-flex align-items-center pt-4">
-                        {{--                        <a href="" class="btn btn-primary mr-5">Learn More</a>--}}
+{{--                        <a href="" class="btn btn-primary mr-5">Learn More</a>--}}
                         <button type="button" class="btn-play" data-toggle="modal"
                                 data-src="https://youtu.be/Ad7mZ16ACB0" data-target="#videoModal">
                             <span></span>
@@ -149,10 +148,12 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">{{__('Bizning xizmatlar')}}</h6>
-                    <h1 class="mb-4 section-title text-white">{{__('Siz uchun ajoyib tozalash xizmatlari')}}</h1>
-                    <p class="text-white">{{__('Biznign xizmatimiz bilan sizning uyingiz, saxsiy xonangiz, ishxonangiz va hohlagan joyingiz yangidek bo`ladi')}}</p>
-                    <a href="" class="btn btn-primary mt-3 py-2 px-4">{{__('Boshqa xizmatlar')}}</a>
+                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">Our Services</h6>
+                    <h1 class="mb-4 section-title text-white">Awesome Cleaning Services For You</h1>
+                    <p class="text-white">Invidunt lorem justo clita. Erat lorem labore ea, justo dolor lorem ipsum ut
+                        sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea
+                        ipsum</p>
+                    <a href="" class="btn btn-primary mt-3 py-2 px-4">More Services</a>
                 </div>
                 <div class="col-lg-6 pt-5 pt-lg-0">
                     <div class="owl-carousel service-carousel position-relative">
@@ -505,10 +506,9 @@
     <!-- Blog Start -->
     <div class="container-fluid pt-5">
         <div class="container pt-5">
-
             <div class="row align-items-end mb-4">
                 <div class="col-lg-6">
-                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">{{__('Oxirgi postlar')}}</h6>
+                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">Latest Blog</h6>
                     <h1 class="section-title mb-3">Latest Articles From Our Blog Post</h1>
                 </div>
                 <div class="col-lg-6">
@@ -516,9 +516,7 @@
                         clita sit ea erat lorem. Ipsum eos ipsum magna lorem stet</h4>
                 </div>
             </div>
-
             <div class="row">
-
                 <div class="col-lg-4 col-md-6 mb-5">
                     <div class="position-relative mb-4">
                         <img class="img-fluid rounded w-100" src="img/blog-1.jpg" alt="">
@@ -570,9 +568,7 @@
                     <p class="mb-4">Dolor justo sea kasd lorem clita justo no diam amet. Kasd magna dolor amet</p>
                     <a class="btn btn-sm btn-primary py-2" href="">Read More</a>
                 </div>
-
             </div>
-
         </div>
     </div>
     <!-- Blog End -->
