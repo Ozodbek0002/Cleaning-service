@@ -148,11 +148,9 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">Our Services</h6>
-                    <h1 class="mb-4 section-title text-white">Awesome Cleaning Services For You</h1>
-                    <p class="text-white">Invidunt lorem justo clita. Erat lorem labore ea, justo dolor lorem ipsum ut
-                        sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea
-                        ipsum</p>
+                    <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">{{__('Bizning servisimz')}}</h6>
+                    <h1 class="mb-4 section-title text-white">{{__('Siz uchun ajoyib tozalash xizmatlari')}}</h1>
+                    <p class="text-white">{{__('')}}</p>
                     <a href="" class="btn btn-primary mt-3 py-2 px-4">More Services</a>
                 </div>
                 <div class="col-lg-6 pt-5 pt-lg-0">
