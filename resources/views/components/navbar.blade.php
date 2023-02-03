@@ -89,6 +89,10 @@
                 {{ Auth::user()->name }}
             </div>
 
+            <div>
+                {{ Auth::user()->hasRole('admin') ? 'Admin' : 'User' }}
+            </div>
+
             <form action="{{route('logout')}}" method="GET">
                 @csrf
                 <button type="submit" class="btn btn-danger d-none d-lg-block"> {{__('Chiqish')}} </button>
