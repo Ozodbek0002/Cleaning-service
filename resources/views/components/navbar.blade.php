@@ -89,9 +89,9 @@
                 {{ Auth::user()->name }}
             </div>
 
-            <div>
-                {{ Auth::user()->hasRole('admin') ? 'Admin' : 'User' }}
-            </div>
+{{--            <div>--}}
+{{--                {{ Auth::user()->hasRole('admin') ? 'Admin' : 'User' }}--}}
+{{--            </div>--}}
 
             <form action="{{route('logout')}}" method="GET">
                 @csrf
