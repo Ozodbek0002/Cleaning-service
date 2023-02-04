@@ -20,7 +20,8 @@ class StorePostRequest extends FormRequest
 
     public function authorize()
     {
-        return Gate::authorize('create-post' ,Role::find(3));
+//        return Gate::authorize('create-post' ,Role::find(3));
+        return true;
     }
 
     /**
