@@ -9,7 +9,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\LanguageController;
 
-
 Route::get('/', [PageController::class, 'main'])->name('main');
 
 Route::get('login', [AuthController::class, 'login'])->name('login');
