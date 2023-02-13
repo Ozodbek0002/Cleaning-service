@@ -47,10 +47,11 @@
                         <img class="/img-fluid rounded w-100 mb-4" src="{{ asset('storage/'.$post->photo) }}"
                              alt="Image">
                         <p>{{$post->content}}</p>
-                        <h2 class="mb-4">Est dolor lorem et ea rfghn</h2>
+                        <h2 class="mb-4"> Est dolor lorem et ea rfghn </h2>
                         <img class="/img-fluid rounded w-50 float-left mr-4 mb-3"
                              src="{{ asset('storage/'.$post->photo) }}" alt="Image">
-                        <p>Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor invidunt at
+                        <p>
+                            Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor invidunt at
                             est
                             sanctus sanctus. Clita dolores sit kasd diam takimata justo diam lorem sed. Magna amet sed
                             rebum
@@ -68,7 +69,9 @@
                             ipsum magna dolor lorem dolore, elitr aliquyam takimata sea kasd dolores diam, amet et est
                             accusam labore eirmod vero et voluptua. Amet labore clita duo et no. Rebum voluptua magna
                             eos
-                            magna, justo gubergren labore sit voluptua eos.</p>
+                            magna, justo gubergren labore sit voluptua eos.
+
+                        </p>
 
 
                     </div>
@@ -127,8 +130,7 @@
                         <img src="/img/user.jpg" class="/img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
                         <h3 class="text-white mb-3">{{auth()->user()->name}}</h3>
                         <p class="text-white m-0">
-                            Conset elitr erat vero dolor ipsum et diam, eos dolor lorem ipsum,
-                            ipsum  ipsum sit no ut est. Guber ea ipsum erat kasd amet est elitr ea sit.
+                            User haqida malumotlar chiqadi...
                         </p>
                     </div>
 
@@ -144,6 +146,7 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 
+
                     {{--                    Categories--}}
                     <div class="mb-5">
                         <h3 class="mb-4 section-title">Kategoriyalar</h3>
@@ -158,6 +161,7 @@
 
                         </ul>
                     </div>
+
 
                     {{--                    Tags--}}
                     <div class="mb-5">
