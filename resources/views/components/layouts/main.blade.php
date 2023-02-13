@@ -89,16 +89,18 @@
             <a href="#" class="navbar-brand">
                 <h1 class="m-0 mt-n3 display-4 text-primary">Klean</h1>
             </a>
-            <p>Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
-            <h5 class="font-weight-semi-bold text-white mb-2">Opening Hours:</h5>
-            <p class="mb-1">Mon – Sat, 8AM – 5PM</p>
-            <p class="mb-0">Sunday: Closed</p>
+            <p>
+                Matin kiriting ...
+            </p>
+            <h5 class="font-weight-semi-bold text-white mb-2">{{__('Ish vaqti:')}}</h5>
+            <p class="mb-1">{{__('Dushanba - shanba, 8:00 - 17:00')}}</p>
+            <p class="mb-0">{{__("Yakshanba: dam olish")}}</p>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
-            <h4 class="font-weight-semi-bold text-primary mb-4">Get In Touch</h4>
-            <p><i class="fa fa-map-marker-alt text-primary mr-2"></i>123 Street, New York, USA</p>
-            <p><i class="fa fa-phone-alt text-primary mr-2"></i>+012 345 67890</p>
-            <p><i class="fa fa-envelope text-primary mr-2"></i>info@example.com</p>
+            <h4 class="font-weight-semi-bold text-primary mb-4">{{__('Biz bilan bog`laning')}}</h4>
+            <p><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{__('Urganch shahri,Al-Xorazimy ko`cha 110')}}</p>
+            <p><i class="fa fa-phone-alt text-primary mr-2"></i>+99 891 277 09 19</p>
+            <p><i class="fa fa-envelope text-primary mr-2"></i>ozodbekozodov0002@gmail.com</p>
             <div class="d-flex justify-content-start mt-4">
                 <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
                 <a class="btn btn-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
