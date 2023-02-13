@@ -126,22 +126,23 @@
                     <div class="d-flex flex-column text-center bg-secondary rounded mb-5 py-5 px-4">
                         <img src="/img/user.jpg" class="/img-fluid rounded-circle mx-auto mb-3" style="width: 100px;">
                         <h3 class="text-white mb-3">{{auth()->user()->name}}</h3>
-                        <p class="text-white m-0">Conset elitr erat vero dolor ipsum et diam, eos dolor lorem ipsum,
-                            ipsum
-                            ipsum sit no ut est. Guber ea ipsum erat kasd amet est elitr ea sit.</p>
+                        <p class="text-white m-0">
+                            Conset elitr erat vero dolor ipsum et diam, eos dolor lorem ipsum,
+                            ipsum  ipsum sit no ut est. Guber ea ipsum erat kasd amet est elitr ea sit.
+                        </p>
                     </div>
 
                     {{--                    search--}}
-                    <div class="mb-5">
-                        <div class="w-100">
-                            <div class="input-group">
-                                <input type="text" class="form-control" style="padding: 25px;" placeholder="Keyword">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary px-4">Search</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                    <div class="mb-5">--}}
+{{--                        <div class="w-100">--}}
+{{--                            <div class="input-group">--}}
+{{--                                <input type="text" class="form-control" style="padding: 25px;" placeholder="Keyword">--}}
+{{--                                <div class="input-group-append">--}}
+{{--                                    <button class="btn btn-primary px-4">Search</button>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                     {{--                    Categories--}}
                     <div class="mb-5">
