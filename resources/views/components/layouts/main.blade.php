@@ -107,7 +107,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
-            <h4 class="font-weight-semi-bold text-primary mb-4">Quick Links</h4>
+            <h4 class="font-weight-semi-bold text-primary mb-4">{{__('Tez havolalar')}}</h4>
             <div class="d-flex flex-column justify-content-start">
                 <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>{{ __('Bosh sahifa') }}</a>
                 <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>{{__('Biz haqimizda')}}</a>
@@ -118,8 +118,8 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
-            <h4 class="font-weight-semi-bold text-primary mb-4">Newsletter</h4>
-            <p>{{__('')}}</p>
+            <h4 class="font-weight-semi-bold text-primary mb-4">{{__('Yangiliklar')}}</h4>
+            <p>matin kiriting...</p>
             <div class="w-100">
                 <div class="input-group">
                     <input type="text" class="form-control border-0" style="padding: 25px;" placeholder="Your Email">
