@@ -11,6 +11,7 @@
             <div class="contact-form">
                 <div id="success"></div>
 
+
                 {{--                validate errors--}}
                 {{--                @if ($errors->any())--}}
                 {{--                    <div class="alert alert-danger">--}}
@@ -21,6 +22,7 @@
                 {{--                        </ul>--}}
                 {{--                    </div>--}}
                 {{--                @endif--}}
+
 
                 <form action="{{route('posts.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
