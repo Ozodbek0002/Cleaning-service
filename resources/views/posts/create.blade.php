@@ -52,6 +52,7 @@
 
 
 
+
                     <div class="control-group">
                         <input type="file" class="form-control p-4" name="photo" placeholder="Rasmi..." title="rasmi">
                         @error('photo')
@@ -76,13 +77,16 @@
                         @enderror
                     </div>
 
+
                     <div>
                         <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton">
                             Yaratish
                         </button>
                     </div>
 
+
                 </form>
+
             </div>
         </div>
 
