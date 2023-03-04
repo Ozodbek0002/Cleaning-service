@@ -5,7 +5,9 @@
     </x-slot:title>
 
 
+
     <x-page-header title="{{__('Biz haqimizda')}}"/>
+
 
 
     <!-- About Start -->
@@ -194,5 +196,6 @@
         </div>
     </div>
     <!-- Team End -->
+
 
 </x-layouts.main>
