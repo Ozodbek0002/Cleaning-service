@@ -5,6 +5,7 @@
     </x-slot:title>
 
 
+
     <!-- Carousel Start -->
     <div class="container-fluid p-0">
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -572,5 +573,6 @@
         </div>
     </div>
     <!-- Blog End -->
+
 
 </x-layouts.main>
