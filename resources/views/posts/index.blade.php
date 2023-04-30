@@ -6,7 +6,6 @@
 
     <x-page-header title="{{__('Postlar')}}"/>
 
-
     <!-- Blog Start -->
     <div class="container-fluid py-5">
         <div class="container">
